@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "affiliate_links",
+  "info": {
+    "singularName": "affiliate-link",
+    "pluralName": "affiliate-links",
+    "displayName": "Affiliate Link"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "clicks": {
+      "type": "integer"
+    },
+    "conversion_rate": {
+      "type": "float"
+    },
+    "landing_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::landing-page.landing-page",
+      "inversedBy": "affiliate_links"
+    }
+  }
+}

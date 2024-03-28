@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "singularName": "campaign",
+    "pluralName": "campaigns",
+    "displayName": "Campaign",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "utm_source": {
+      "type": "string"
+    },
+    "utm_medium": {
+      "type": "string"
+    },
+    "utm_campaign": {
+      "type": "string"
+    },
+    "clicks": {
+      "type": "integer"
+    },
+    "conversions": {
+      "type": "integer"
+    },
+    "url": {
+      "type": "string"
+    },
+    "landing_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::landing-page.landing-page",
+      "inversedBy": "campaigns"
+    }
+  }
+}
